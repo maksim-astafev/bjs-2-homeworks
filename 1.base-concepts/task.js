@@ -17,7 +17,7 @@ function solveEquation(a, b, c) {
 }
 
 function checkNumberValue(value, valueName) {
-  if(isNaN(value) === true) {
+  if(isNaN(value)) {
     return `Параметр ${valueName} содержит неправильное значение ${value}`;
     } else {
       return Number(value);
@@ -25,7 +25,7 @@ function checkNumberValue(value, valueName) {
 }
 
 function reportError(value, isError) {
-  if(isNaN(value) === true) {
+  if(isNaN(value)) {
     console.log(value);
     return true;
   } else {
@@ -56,7 +56,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   let monthlyPercent = (percent / 100) / 12;
   let monthlyPayment = loanBody * (monthlyPercent + monthlyPercent / (((1 + monthlyPercent) ** monthQuantity) - 1));
   let totalAmount = monthlyPayment * monthQuantity;
-  totalAmount = totalAmount.toFixed(2);
+  totalAmount = Number(totalAmount.toFixed(2));
   console.log("Общая сумма, которую придется заплатить клиенту = " + totalAmount);
 
   return totalAmount;
