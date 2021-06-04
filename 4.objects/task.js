@@ -14,7 +14,7 @@ Student.prototype.setSubject = function (subjectName) {
   this.subject = subjectName;
 }
 
-Student.prototype.addMark = function addMark(mark) {
+Student.prototype.addMark = function (mark) {
   if(this.marks === undefined){ 
     this.marks = [];
   }
@@ -22,15 +22,15 @@ Student.prototype.addMark = function addMark(mark) {
   this.marks.push(mark);
 }
 
-Student.prototype.addMarks = function addMarks(...marksList) {
+Student.prototype.addMarks = function (...marksList) {
   if(this.marks === undefined){ 
     this.marks = [];
   }
   
-  marksList.forEach((mark) => this.marks.push(mark));
+  marksList.forEach((mark) => this.addMark(mark));
 }
 
-Student.prototype.getAverage = function getAverage() {
+Student.prototype.getAverage = function () {
   if(this.marks === undefined){ 
     return "Нет оценок";
   } else {
@@ -43,7 +43,7 @@ Student.prototype.getAverage = function getAverage() {
   }
 }
 
-Student.prototype.exclude = function exclude(reason) {
+Student.prototype.exclude = function (reason) {
   if(this.marks !== undefined){ 
     delete this.marks;
   }
