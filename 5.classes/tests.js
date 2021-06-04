@@ -104,6 +104,7 @@ describe('Домашнее задание к занятию 2.3 «ООП в JS (
   })
 
   describe('Задача №3', () => {
+    // debugger;
     let studentLog;
   
     beforeEach(function(){
@@ -119,16 +120,16 @@ describe('Домашнее задание к занятию 2.3 «ООП в JS (
     });
   
     it('подсчёт средней оценки по предмету', () => {
-      studentLog.addGrade(3, "algebra");
-      studentLog.addGrade(5, "algebra");
+      studentLog.addMark(3, "algebra");
+      studentLog.addMark(5, "algebra");
       expect(studentLog.getAverageBySubject("algebra")).toEqual(4);
     });
   
     it('подсчёт общей средней оценки', () => {
-      studentLog.addGrade(3, "algebra");
-      studentLog.addGrade(5, "algebra");
-      studentLog.addGrade(5, "history");
-      studentLog.addGrade(5, "history");
+      studentLog.addMark(3, "algebra");
+      studentLog.addMark(5, "algebra");
+      studentLog.addMark(5, "history");
+      studentLog.addMark(5, "history");
       expect(studentLog.getTotalAverage()).toEqual(4.5);
     });
   });
