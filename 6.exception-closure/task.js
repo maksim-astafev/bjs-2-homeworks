@@ -3,19 +3,16 @@ function parseCount(value) {
   const count = Number.parseInt(value);
   if(isNaN(count)) {
     throw new Error("Невалидное значение");
-  } else {
-    return count;
   }
+  return count;
 }
 
 function validateCount(value) {
-  let result;
   try {
-    result = parseCount(value);
+    return parseCount(value);
   } catch(error) {
     return error;
   }
-  return result;
 }
 
 // Задача №2. Треугольник
@@ -49,18 +46,10 @@ function getTriangle(a, b, c) {
   try {
     return new Triangle(a, b, c);
   } catch(error) {
-    function erroredTriangle() {
-      this.errorMessage = "Ошибка! Треугольник не существует";
+    const errorMessage = "Ошибка! Треугольник не существует";
+    return {
+      getPerimeter: () => errorMessage,
+      getArea: () => errorMessage
     }
-
-    erroredTriangle.prototype.getPerimeter = function () {
-      return this.errorMessage;
-    }
-
-    erroredTriangle.prototype.getArea = function () {
-      return this.errorMessage;
-    }
-
-    return new erroredTriangle;
   }
 }
