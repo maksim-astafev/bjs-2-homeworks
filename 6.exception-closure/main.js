@@ -1,7 +1,7 @@
 function calculate1Task(){
     const count = document.getElementById("count").value
     const result = validateCount(count);
-    document.getElementById("parcedNumber").innerText = result;
+    document.getElementById("parsedNumber").innerText = result;
 }
 
 function calculate2Task(){
