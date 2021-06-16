@@ -96,6 +96,10 @@ class AlarmClock {
     if(minutes < 10) {
       minutes = "0" + minutes;
     }
-    return dateObj.getHours() + ":" + minutes;
+    let hours = dateObj.getHours();
+    if(hours < 10) {
+      hours = "0" + hours;
+    }
+    return  hours + ":" + minutes;
   }
 }
