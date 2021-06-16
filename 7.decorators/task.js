@@ -12,7 +12,9 @@ function cachingDecoratorNew(func) {
         cache.shift(1);
       }
       cache.push({[hash]: result});
-      console.log("Вычисляем: " + result);
+      result = "Вычисляем: " + result;
+      console.log(result);
+      return result;
     }
   }
   return wrapper;
