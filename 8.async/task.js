@@ -71,7 +71,7 @@ class AlarmClock {
   printAlarms() {
     const num = this.alarmCollection.length;
     if(num > 0) {
-      console.log(`Список всех будильников в количестве ${num}: `);
+      console.log(`Список всех установленных будильников в количестве ${num}: `);
       this.alarmCollection.forEach(alarm => console.log(`Будильник №${alarm[this.id]} установлен на ${alarm[this.time]}`));
     } else {
       console.log(`Список установленных будильников пуст`);
